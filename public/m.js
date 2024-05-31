@@ -2,7 +2,7 @@ const version = "2.0";
 const news = `	<h3>Version: ${version}</h3>
 	<ul>
 	<li><b>Feature</b><br>
-	  hi if you have encountered some error please contact me <a href="https://www.facebook.com/61550264923277">
+	  hi if you have encountered some error please contact me <a href="https://www.facebook.com/61554265433272">
 				<button class="contact">Facebook</button></a> 
 	</li>
         </ul>`;

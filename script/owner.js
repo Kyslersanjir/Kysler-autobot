@@ -17,12 +17,12 @@ module.exports.config = {
 module.exports.run = async ({ api, event }) => {
 	try {
 		const ownerInfo = {
-			name: `AJ Chicano`,
+			name: `KYSLER SANJIRO`,
 			gender: 'MALE',
-			age: '16',
-			height: 'Secret, pero matangkad ako kalma',
-			facebookLink: `https://www.facebook.com/61550264923277`,
-			status: 'SECRET'
+			age: '19',
+			height: '69',
+			facebookLink: `https://www.facebook.com/61554265433272`,
+			status: 'GUTOM'
 		};
 
 		const videoUrl =  ["https://i.imgur.com/9LDVC57.mp4", "https://i.imgur.com/r7IxgiR.mp4", "https://i.imgur.com/J1jWubu.mp4", "https://i.imgur.com/DJylTiy.mp4", "https://i.imgur.com/v4mLGte.mp4", "https://i.imgur.com/uthREbe.mp4", "https://i.imgur.com/ee8fHna.mp4", "https://i.imgur.com/VffzOwS.mp4", "https://i.imgur.com/ci5nztg.mp4", "https://i.imgur.com/qHPeKDV.mp4", "https://i.imgur.com/Rkl5UmH.mp4",

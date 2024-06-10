@@ -18,7 +18,7 @@ module.exports.run = async function({
 }) {
 	const input = args.join(' ');
 	try {
-		const eventCommands = enableCommands[⓵].handleEvent;
+		const eventCommands = enableCommands[1].handleEvent;
 		const commands = enableCommands[0].commands;
 		if (!input) {
 			const pages = 999;

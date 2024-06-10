@@ -22,13 +22,13 @@ module.exports.run = async function({
 		const commands = enableCommands[0].commands;
 		if (!input) {
 			const pages = 999;
-			let page = ⓵;
-			let start = (page - ⓵) * pages;
+			let page = 1;
+			let start = (page - 1) * pages;
 			let end = start + pages;
 			let helpMessage = `🔴🟢🟡\n\n====❯ 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧: ❮====\n
 ▱▱▱▱▱▱▱▱▱▱▱▱▱\n\n`;
 			for (let i = start; i < Math.min(end, commands.length); i++) {
-				helpMessage += `┍━☽\n ➔\t❯ ${i + ⓵}.❮  ${prefix}${commands[i]}\n╰━━━━━━━━━━━✶ \n`;
+				helpMessage += `┍━☽\n ➔\t❯ ${i + 1}.❮  ${prefix}${commands[i]}\n╰━━━━━━━━━━━✶ \n`;
 			}
 			helpMessage += '\n====❮ 𝗘𝗩𝗘𝗡𝗧 𝗟𝗜𝗦T: ❯====\n▱▱▱▱▱▱▱▱▱▱▱▱▱\n\n';
 			eventCommands.forEach((eventCommand, index) => {
@@ -39,11 +39,11 @@ module.exports.run = async function({
 		} else if (!isNaN(input)) {
 			const page = parseInt(input);
 			const pages = 999;
-			let start = (page - ⓵) * pages;
+			let start = (page - 1) * pages;
 			let end = start + pages;
 			let helpMessage = `𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧:\n\n`;
 			for (let i = start; i < Math.min(end, commands.length); i++) {
-				helpMessage += `\t${i + ⓵}. ❮ ${prefix}${commands[i]} ❯\n`;
+				helpMessage += `\t${i + 1}. ❮ ${prefix}${commands[i]} ❯\n`;
 			}
 			helpMessage += '\n𝗘𝗩𝗘𝗡𝗧 𝗟𝗜𝗦𝗧:\n\n';
 			eventCommands.forEach((eventCommand, index) => {

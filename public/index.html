@@ -65,6 +65,41 @@
          text-align: center;
          border-top: 1px solid #ddd;
       }
+      #video-container {
+         width: 75%;
+         height: auto;
+         background: rgba(255, 255, 255, 0.1);
+         border-radius: 15px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         padding: 20px;
+         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+         backdrop-filter: blur(10px);
+         margin: 20px auto;
+      }
+      #video {
+         width: 100%;
+         max-width: 600px;
+         height: auto;
+         border-radius: 10px;
+         object-fit: cover;
+         border: 3px solid #fff;
+         margin-bottom: 20px;
+      }
+      #next-button {
+         padding: 10px 20px;
+         font-size: 16px;
+         background-color: #007ACC;
+         color: #fff;
+         border: none;
+         border-radius: 8px;
+         cursor: pointer;
+         margin: 10px;
+      }
+      #next-button:hover {
+         background-color: #005999;
+      }
    </style>
 </head>
 <body>
@@ -128,11 +163,9 @@
       <p id="cookieInfo" style="margin-top: 10px;"></p>
       <hr>
       <!-- Embed Random-Shoti Video here -->
-      <div class="container">
-         <div id="video-container">
-            <video id="video" controls autoplay></video>
-            <button id="next-button" class="btn btn-primary">Next Video</button>
-         </div>
+      <div id="video-container">
+         <video id="video" controls autoplay></video>
+         <button id="next-button">Next Video</button>
       </div>
    </div>
    <div class="container" id="listOfCommands">
@@ -207,5 +240,5 @@
       });
    </script>
 </body>
-   </html>
-               
+      </html>
+         

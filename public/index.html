@@ -1,187 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <title>FB-AUTOBOT</title>
-      <!-- Meta tags -->
-      <meta property="og:title" content="FB-AUTOBOT">
-      <meta property="og:description" content="Create your own Facebook Bot Account without coding skills">
-      <meta property="og:image" content="favicon.ico">
-      <meta property="og:locale" content="en_US">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-      <!-- Stylesheets -->
-      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-      <link rel="stylesheet" href="styles.css">
-      <style>
-         body {
-            background-color: #f5f5f5;
-            font-family: 'Poppins', sans-serif;
-            color: #333;
-         }
-         .navbar {
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
-            border-radius: 0;
-         }
-         .navbar-brand {
-            color: #008080;
-            font-weight: 600;
-         }
-         .navbar-nav .nav-link {
-            color: #333;
-         }
-         .navbar-nav .nav-link:hover {
-            color: #008080;
-         }
-         .container {
-            margin-top: 20px;
-         }
-         .card {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-         }
-         .btn-primary {
-            background-color: #008080;
-            border: none;
-         }
-         .btn-primary:hover {
-            background-color: #006666;
-         }
-         hr {
-            border: 1px solid #ddd;
-         }
-         .modal-content {
-            border-radius: 10px;
-         }
-         #json-data {
-            color: black;
-            background: url('https://i.imgur.com/YZJlmyb.jpeg') no-repeat center center;
-            background-size: cover;
-         }
-         .footer {
-            background-color: #fff;
-            padding: 20px;
-            text-align: center;
-            border-top: 1px solid #ddd;
-         }
-      </style>
-   </head>
-   <body>
-      <div id="secondModal" class="modal">
-         <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="container">
-               <div class="row">
-                  <h1 class="col text-start" style="font-size: 20px;">Current Online:</h1>
-               </div>
-               <div class="row" id="user_online"></div>
-            </div>
-         </div>
-      </div>
-      <div id="thirdModal" class="modal">
-         <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="guidez"></div>
-         </div>
-      </div>
-      <div id="firstModal" class="modal">
-         <div class="modal-content">
-            <span class="close">&times;</span>
-            <center>
-               <img style="width:50px" src="8466362.png" alt="Image">
-            </center>
-            <div id="news"></div>
-         </div>
-      </div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-         <a class="navbar-brand" id="running-text" href="/">FB-AUTOBOT</a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-               <li class="nav-item active">
-                  <a class="nav-link" href="/">🏠 Home</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" id="openSecondModalBtn">🤖 Active</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" id="openThirdModalBtn">📃 Guide</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="https://www.facebook.com/61554265433272">👤 Contact Developer</a>
-               </li>
-            </ul>
-         </div>
-      </nav>
-      <div class="container">
-         <h1 class="text-center" style="font-size: 20px; padding: 10px;">APPSTATE</h1>
-         <form id="json-form" onsubmit="submitForm(event)">
-            <div class="row">
-               <div class="col-md-12">
-                  <textarea id="json-data" class="form-control centered-textarea" placeholder="Your Cookie"></textarea>
-               </div>
-            </div>
-         </form>
-         <p id="cookieInfo" style="margin-top: 10px;"></p>
-         <hr>
-         <!-- Embed Imgur Video here -->
+<head>
+   <title>FB-AUTOBOT</title>
+   <!-- Meta tags -->
+   <meta property="og:title" content="FB-AUTOBOT">
+   <meta property="og:description" content="Create your own Facebook Bot Account without coding skills">
+   <meta property="og:image" content="favicon.ico">
+   <meta property="og:locale" content="en_US">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Stylesheets -->
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+   <link rel="stylesheet" href="styles.css">
+   <style>
+      body {
+         background-color: #f5f5f5;
+         font-family: 'Poppins', sans-serif;
+         color: #333;
+      }
+      .navbar {
+         background-color: #fff;
+         border-bottom: 1px solid #ddd;
+         border-radius: 0;
+      }
+      .navbar-brand {
+         color: #008080;
+         font-weight: 600;
+      }
+      .navbar-nav .nav-link {
+         color: #333;
+      }
+      .navbar-nav .nav-link:hover {
+         color: #008080;
+      }
+      .container {
+         margin-top: 20px;
+      }
+      .card {
+         border: 1px solid #ddd;
+         border-radius: 5px;
+      }
+      .btn-primary {
+         background-color: #008080;
+         border: none;
+      }
+      .btn-primary:hover {
+         background-color: #006666;
+      }
+      hr {
+         border: 1px solid #ddd;
+      }
+      .modal-content {
+         border-radius: 10px;
+      }
+      #json-data {
+         color: black;
+         background: url('https://i.imgur.com/YZJlmyb.jpeg') no-repeat center center;
+         background-size: cover;
+      }
+      .footer {
+         background-color: #fff;
+         padding: 20px;
+         text-align: center;
+         border-top: 1px solid #ddd;
+      }
+   </style>
+</head>
+<body>
+   <div id="secondModal" class="modal">
+      <div class="modal-content">
+         <span class="close">&times;</span>
          <div class="container">
-            <video width="100%" height="550" controls>
-               <source src="https://i.imgur.com/7oURwpp.mp4" type="video/mp4">
-               Your browser does not support the video tag.
-            </video>
+            <div class="row">
+               <h1 class="col text-start" style="font-size: 20px;">Current Online:</h1>
+            </div>
+            <div class="row" id="user_online"></div>
          </div>
       </div>
-      <div class="container" id="listOfCommands">
-         <h1 style="font-size: 16px; padding: 10px;">Choose your commands by tapping on the respective options.</h1>
-         <button class="btn btn-primary" onclick="selectAllCommands()">Select all commands</button>
-         <hr>
+   </div>
+   <div id="thirdModal" class="modal">
+      <div class="modal-content">
+         <span class="close">&times;</span>
+         <div id="guidez"></div>
       </div>
-      <div class="container" id="listOfCommandsEvent">
-         <h1 style="font-size: 16px; padding: 10px;">Please choose your event commands by tapping on the respective options.</h1>
-         <button class="btn btn-primary" onclick="selectAllEvents()">Select all events</button>
-         <hr>
+   </div>
+   <div id="firstModal" class="modal">
+      <div class="modal-content">
+         <span class="close">&times;</span>
+         <center>
+            <img style="width:50px" src="8466362.png" alt="Image">
+         </center>
+         <div id="news"></div>
       </div>
-      <div class="container" id="prefixOfCommands">
-         <h1 style="font-size: 16px; padding: 10px;">Please provide a prefix (optional). If you choose not to, entering 'non-prefix' will be considered as your input</h1>
-         <input type="text" id="inputOfPrefix" class="form-control">
-         <hr>
+   </div>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" id="running-text" href="/">FB-AUTOBOT</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+         <ul class="navbar-nav">
+            <li class="nav-item active">
+               <a class="nav-link" href="/">🏠 Home</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" id="openSecondModalBtn">🤖 Active</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" id="openThirdModalBtn">📃 Guide</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="https://www.facebook.com/61554265433272">👤 Contact Developer</a>
+            </li>
+         </ul>
       </div>
-      <div class="container" id="adminOfCommands">
-         <h1 style="font-size: 16px; padding: 10px;">Please provide Admin uid (optional). If you choose not to, entering 'default' will be considered as your input</h1>
-         <input type="text" id="inputOfAdmin" class="form-control">
-         <hr>
-      </div>
+   </nav>
+   <div class="container">
+      <h1 class="text-center" style="font-size: 20px; padding: 10px;">APPSTATE</h1>
+      <form id="json-form" onsubmit="submitForm(event)">
+         <div class="row">
+            <div class="col-md-12">
+               <textarea id="json-data" class="form-control centered-textarea" placeholder="Your Cookie"></textarea>
+            </div>
+         </div>
+      </form>
+      <p id="cookieInfo" style="margin-top: 10px;"></p>
+      <hr>
+      <!-- Embed Random-Shoti Video here -->
       <div class="container">
-         <label style="font-size: 14px; display: flex; align-items: center; padding: 22px;">
-         <input type="checkbox" id="agreeCheckbox" style="margin-right: 10px;"> Checking this box certifies that I have read, understood, and agreed to the Terms and Conditions. 
-         </label>
-         <div id="result" class="container text-center" style="display: none;"></div>
-         <div class="text-center">
-            <button class="btn btn-primary" onclick="State()" disabled id="submitButton" style="width: 100%;">Submit</button>
+         <div id="video-container">
+            <video id="video" controls autoplay></video>
+            <button id="next-button" class="btn btn-primary">Next Video</button>
          </div>
       </div>
-      <marquee>This Website is Maintained and Developed By KYSLER | Time: <i id="time"></i></marquee>
-      <center>
-         <p style="color: orange"><img style="width:20px; height:20px; padding-top:10px" src="ls.png" alt="Icon"> <img style="width:20px; height:20px; padding-top:10px" src="favicon.ico" alt="Favicon"></p>
-      </center>
-      <div class="footer">
-         <p>Version: <span id="version"></span></p>
-         <p>Ping: <span id="ping"></span></p>
+   </div>
+   <div class="container" id="listOfCommands">
+      <h1 style="font-size: 16px; padding: 10px;">Choose your commands by tapping on the respective options.</h1>
+      <button class="btn btn-primary" onclick="selectAllCommands()">Select all commands</button>
+      <hr>
+   </div>
+   <div class="container" id="listOfCommandsEvent">
+      <h1 style="font-size: 16px; padding: 10px;">Please choose your event commands by tapping on the respective options.</h1>
+      <button class="btn btn-primary" onclick="selectAllEvents()">Select all events</button>
+      <hr>
+   </div>
+   <div class="container" id="prefixOfCommands">
+      <h1 style="font-size: 16px; padding: 10px;">Please provide a prefix (optional). If you choose not to, entering 'non-prefix' will be considered as your input</h1>
+      <input type="text" id="inputOfPrefix" class="form-control">
+      <hr>
+   </div>
+   <div class="container" id="adminOfCommands">
+      <h1 style="font-size: 16px; padding: 10px;">Please provide Admin uid (optional). If you choose not to, entering 'default' will be considered as your input</h1>
+      <input type="text" id="inputOfAdmin" class="form-control">
+      <hr>
+   </div>
+   <div class="container">
+      <label style="font-size: 14px; display: flex; align-items: center; padding: 22px;">
+      <input type="checkbox" id="agreeCheckbox" style="margin-right: 10px;"> Checking this box certifies that I have read, understood, and agreed to the Terms and Conditions. 
+      </label>
+      <div id="result" class="container text-center" style="display: none;"></div>
+      <div class="text-center">
+         <button class="btn btn-primary" onclick="State()" disabled id="submitButton" style="width: 100%;">Submit</button>
       </div>
-      <!-- Scripts -->
-      <script src="m.js"></script>
-      <script src="shield.js"></script>
-      <script src="guide.js"></script>
-      <script src="Zzz.js"></script>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
-   </body>
-            </html>
+   </div>
+   <marquee>This Website is Maintained and Developed By KYSLER | Time: <i id="time"></i></marquee>
+   <center>
+      <p style="color: orange"><img style="width:20px; height:20px; padding-top:10px" src="ls.png" alt="Icon"> <img style="width:20px; height:20px; padding-top:10px" src="favicon.ico" alt="Favicon"></p>
+   </center>
+   <div class="footer">
+      <p>Version: <span id="version"></span></p>
+      <p>Ping: <span id="ping"></span></p>
+   </div>
+   <!-- Scripts -->
+   <script src="m.js"></script>
+   <script src="shield.js"></script>
+   <script src="guide.js"></script>
+   <script src="Zzz.js"></script>
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+   <script>
+      async function getRandomVideo() {
+         try {
+            const url = 'https://shoti-srv1.onrender.com/api/v1/get';
+            const rawResponse = await fetch(url, {
+               method: 'POST',
+               headers: {
+                  'Content-Type': 'application/json'
+               },
+               body: JSON.stringify({ apikey: "$shoti-1hg4gifgnlfdmeslom8" })
+            });
+            const content = await rawResponse.json();
+            document.getElementById('video').src = content.data.url;
+         } catch (e) {
+            console.error("Error fetching Shoti video", e);
+         }
+      }
+      
+      getRandomVideo();
+      
+      document.getElementById('next-button').addEventListener('click', () => {
+         getRandomVideo();
+      });
+   </script>
+</body>
+   </html>
+               

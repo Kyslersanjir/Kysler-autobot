@@ -199,46 +199,70 @@
    </div>
    <marquee>This Website is Maintained and Developed By KYSLER | Time: <i id="time"></i></marquee>
    <center>
-      <p style="color: orange"><img style="width:20px; height:20px; padding-top:10px" src="ls.png" alt="Icon"> <img style="width:20px; height:20px; padding-top:10px" src="favicon.ico" alt="Favicon"></p>
+      <p style="color: orange"><img style="width:20px; height:20px; padding-top:10px" src="ls.png" alt="Icon"> <img style="width:20px; height:20px; padding-top:10px" src="ls.png" alt="Icon"> <img style="width:20px; height:20px; padding-top:10px" src="ls.png" alt="Icon"> <img style="width:20px; height:20px; padding-top:10px" src="ls.png" alt="Icon"> <img style="width:20px; height:20px; padding-top:10px" src="ls.png" alt="Icon"></p>
    </center>
-   <div class="footer">
-      <p>Version: <span id="version"></span></p>
-      <p>Ping: <span id="ping"></span></p>
+   <footer class="footer">
+      <div class="container">
+         <p>&copy; 2024 FB-AUTOBOT. All rights reserved.</p>
+      </div>
+   </footer>
+   <!-- Music Button -->
+   <div class="text-center mt-4">
+      <audio id="audio" src="Bee Gees - How Deep Is Your Love (Lyrics).mp3" autoplay muted></audio>
+      <button class="btn btn-primary" onclick="document.getElementById('audio').play()">Play Music</button>
    </div>
    <!-- Scripts -->
-   <script src="m.js"></script>
-   <script src="shield.js"></script>
-   <script src="guide.js"></script>
-   <script src="Zzz.js"></script>
-   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="script.js"></script>
    <script>
-      async function getRandomVideo() {
-         try {
-            const url = 'https://shoti-srv1.onrender.com/api/v1/get';
-            const rawResponse = await fetch(url, {
-               method: 'POST',
-               headers: {
-                  'Content-Type': 'application/json'
-               },
-               body: JSON.stringify({ apikey: "$shoti-1hg4gifgnlfdmeslom8" })
-            });
-            const content = await rawResponse.json();
-            document.getElementById('video').src = content.data.url;
-         } catch (e) {
-            console.error("Error fetching Shoti video", e);
+      function State() {
+         // Your JavaScript function for state
+      }
+
+      function submitForm(event) {
+         event.preventDefault();
+         // Your JavaScript function for form submission
+      }
+
+      function selectAllCommands() {
+         // Your JavaScript function for selecting all commands
+      }
+
+      function selectAllEvents() {
+         // Your JavaScript function for selecting all events
+      }
+
+      // Example function for setting the time
+      setInterval(function() {
+         document.getElementById('time').innerText = new Date().toLocaleTimeString();
+      }, 1000);
+
+      // Modal functionality
+      var modal = document.getElementById("firstModal");
+      var btn = document.getElementById("openFirstModalBtn");
+      var span = document.getElementsByClassName("close")[0];
+
+      btn.onclick = function() {
+         modal.style.display = "block";
+      }
+
+      span.onclick = function() {
+         modal.style.display = "none";
+      }
+
+      window.onclick = function(event) {
+         if (event.target == modal) {
+            modal.style.display = "none";
          }
       }
-      
-      getRandomVideo();
-      
-      document.getElementById('next-button').addEventListener('click', () => {
-         getRandomVideo();
+
+      // Unmute audio after load
+      window.addEventListener('load', function() {
+         var audio = document.getElementById('audio');
+         audio.muted = false;
       });
    </script>
 </body>
-      </html>
-         
+            </html>
+   

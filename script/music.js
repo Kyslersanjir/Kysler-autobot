@@ -7,7 +7,7 @@ module.exports.config = {
  aliases: ["kanta","music","song"],
 cooldowns: 0,
 cooldown: 0,
-hasPrefix: false,
+hasPrefix: true,
 usage: "{pn} search music",
 };
 

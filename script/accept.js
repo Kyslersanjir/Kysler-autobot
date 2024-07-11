@@ -5,7 +5,7 @@ module.exports.config = {
   aliases: ["accept"],
   credits: "AJ",
   cooldown: 0,
-  hasPretix: false,  
+  hasPretix: false,
 };
 
 module.exports.run = async function ({ api, event, args }) {
@@ -19,10 +19,11 @@ module.exports.run = async function ({ api, event, args }) {
     // Send the friend request using the provided UID
     await api.acceptFriendRequest(uid);
 
-    // Send a confirmation message
+    // Log success and send a confirmation message
+    console.log(`Friend request from user with UID ${uid} has been accepted.`);
     api.sendMessage(`Friend request from user with UID ${uid} has been accepted.`, event.threadID);
   } catch (error) {
-    console.error(error);
+    console.error('Error accepting friend request:', error);
     api.sendMessage('An error occurred while processing your request.', event.threadID);
   }
 };
